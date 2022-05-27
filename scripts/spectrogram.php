@@ -116,7 +116,7 @@ function initialize() {
     const DATA = new Uint8Array(ANALYSER.frequencyBinCount);
     const LEN = DATA.length;
     const h = (H / LEN + 0.9);
-    const x = W - 1;
+    const x = W - 4;
     CTX.fillStyle = 'hsl(280, 100%, 10%)';
     CTX.fillRect(0, 0, W, H);
 
@@ -124,7 +124,7 @@ function initialize() {
 
     function loop() {
       window.requestAnimationFrame(loop);
-      let imgData = CTX.getImageData(1, 0, W - 1, H);
+      let imgData = CTX.getImageData(4, 0, W - 4, H);
 
       CTX.fillRect(0, 0, W, H);
       CTX.putImageData(imgData, 0, 0);
